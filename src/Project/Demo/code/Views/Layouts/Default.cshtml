@@ -1,0 +1,42 @@
+﻿@using Sitecore.Mvc
+@using Demo.Project.Website.Models
+@using Sitecore.Mvc.Analytics.Extensions
+@using Sitecore.ExperienceForms.Mvc.Html
+@using Sitecore.Configuration
+
+@model IBasePage
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>@Html.Raw(Model.Title)</title>
+    @if (!string.IsNullOrEmpty(Model.Description))
+    {
+        <meta name="description" content="@Model.Description" />
+    }
+    @Html.RenderFormStyles()
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" />
+    @Html.Sitecore().VisitorIdentification()
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    @Html.RenderFormScripts()
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid d-flex flex-column vh-100">
+        <header class="flex-grow-0">
+            @Html.Sitecore().Placeholder("demo_header")
+        </header>
+
+        <div class="main flex-grow-1">
+            @Html.Sitecore().Placeholder("demo_main")
+        </div>
+
+        <footer class="flex-grow-0">
+            @Html.Sitecore().Placeholder("demo_footer")
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+    @model List<Demo.Feature.NewsListing.Models.INews>
+
+    <div class="card-listing bg-grey-2 row py-5">
+        <div class="container">
+            <div class="row">
+                @foreach (var news in Model)
+                {
+                    <div class="col-xs-12 col-md-3 my-3">
+                        <div class="col-12">
+                            <h1 class="text-secondary">@news.Title</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 my-3">
+                        <div class="col-12">
+                            <h1 class="text-secondary">@news.Description</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 my-3">
+                        <div class="col-12">
+                            <h1 class="text-secondary">@news.PublishDate</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 my-3">
+                        <div class="col-12">
+                            <h1 class="text-secondary">@news.NewsCategory.Value</h1>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
